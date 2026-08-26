@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+    <style>
+        body {
+            background-color: white;
+        }
+
+        .main {
+            text-align: center;
+            background-color: aqua;
+            border: 2px solid rgba(0, 0, 0, 0.959);
+            height: auto;
+            width: 500px;
+            margin: 50px auto;
+            padding-bottom: 30px;
+            box-shadow: 5px 5px 20px black;
+            border-radius: 10px;
+        }
+
+        h2 {
+            font-size: 40px;
+            margin: 20px auto 30px;
+        }
+
+        input {
+            padding: 7px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+
+        select {
+            padding: 7px;
+            border-radius: 5px;
+        }
+
+        .buttons input {
+            padding: 10px 25px;
+            margin: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .submit {
+            background-color: green;
+            color: white;
+        }
+
+        .reset {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+
+        <h2>REGISTRATION FORM</h2>
+
+        <form>
+
+            <label>Username :</label>
+            <input type="text" placeholder="Enter the Username">
+            <br><br>
+
+            <label>Password :</label>
+            <input type="password" placeholder="Enter the Password">
+            <br><br>
+
+            <label>Name :</label>
+            <input type="text" placeholder="Enter the Name">
+            <br><br>
+
+            <label>Email ID :</label>
+            <input type="email" placeholder="Enter the Email ID">
+            <br><br>
+
+            <label>Age :</label>
+            <input type="number" placeholder="Enter your Age" min="1" max="100">
+            <br><br>
+
+            <label>Contact :</label>
+            <input type="tel" placeholder="Enter Contact Number">
+            <br><br>
+
+            <label>Gender :</label>
+            <input type="radio" name="gender" value="male"> Male
+            <input type="radio" name="gender" value="female"> Female
+            <input type="radio" name="gender" value="other"> Other
+            <br><br>
+
+            <label>Select Course :</label>
+            <select>
+                <option>Select the option</option>
+                <option>B.Tech</option>
+                <option>M.Tech</option>
+                <option>MBA</option>
+                <option>MBBS</option>
+                <option>BDS</option>
+                <option>BCA</option>
+            </select>
+            <br><br>
+
+            <label>Marks :</label>
+            <input type="number" placeholder="Enter your Marks" min="0" max="100">
+            <br><br>
+
+            <div class="buttons">
+                <input type="reset" value="Reset" class="reset">
+                <input type="submit" value="Submit" class="submit">
+            </div>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
