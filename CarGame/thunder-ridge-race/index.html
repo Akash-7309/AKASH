@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thunder Ridge Raceway</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+
+    <!-- HOME SCREEN -->
+    <section id="homeScreen" class="home-screen">
+      <div class="home-content">
+        <div class="flag">🏁</div>
+        <h1>Thunder Ridge Raceway</h1>
+        <p class="tagline">Complete 3 laps and become the champion.</p>
+
+        <div class="home-info">
+          <div>🏎️ <strong>4 Drivers</strong></div>
+          <div>🏁 <strong>3 Laps</strong></div>
+          <div>⚡ <strong>2 Nitro Charges</strong></div>
+        </div>
+
+        <button id="startRace" class="start-button">START RACE</button>
+        <p class="hint">Choose your move carefully. Damage can force you into the pits!</p>
+      </div>
+    </section>
+
+    <!-- GAME SCREEN -->
+    <section id="gameScreen" class="game-screen hidden">
+      <header>
+        <h1>Thunder Ridge Raceway</h1>
+        <p>Complete 3 laps and become the champion.</p>
+      </header>
+
+      <section class="panel">
+        <h2>Race Status</h2>
+        <div id="raceInfo"></div>
+        <div class="track" id="track"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Drivers</h2>
+        <div id="drivers" class="drivers"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Your Controls</h2>
+
+        <div class="controls">
+          <button data-action="accelerate">Accelerate</button>
+          <button data-action="corner">Hold Racing Line</button>
+          <button data-action="overtake">Overtake</button>
+          <button data-action="nitro">Use Nitro</button>
+          <button data-action="pit">Pit Stop</button>
+          <button id="restart">Restart Race</button>
+        </div>
+
+        <p id="options">
+          Accelerate for speed, hold the racing line for safety, overtake for position,
+          use nitro for a powerful boost, or pit to repair damage.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>Race Master Commentary</h2>
+        <div id="commentary"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Live Game State</h2>
+        <pre id="gameState"></pre>
+      </section>
+
+      <button id="backHome" class="back-home">← Back to Home</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
