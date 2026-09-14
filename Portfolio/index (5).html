@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akash Yadav | Portfolio</title>
+<style>
+  :root{
+    --bg:#0a0e17;
+    --bg-alt:#0d1220;
+    --card:#111827;
+    --border:#1e2a3d;
+    --blue:#2f7ffa;
+    --blue-light:#5b9dff;
+    --text:#e7ebf3;
+    --muted:#9aa7bd;
+    --green:#1f8a5f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height:1.6;
+  }
+  a{color:inherit;text-decoration:none;}
+  .container{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+  /* NAVBAR */
+  header{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 32px;border-bottom:1px solid var(--border);
+    background:var(--bg-alt);
+  }
+  .logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:700;}
+  .logo .mark{color:var(--blue-light);}
+  nav{display:flex;gap:28px;font-size:15px;color:var(--muted);}
+  nav a.active{color:var(--blue-light);border-bottom:2px solid var(--blue-light);padding-bottom:4px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--blue);color:#fff;border:none;
+    padding:10px 18px;border-radius:6px;font-size:14px;font-weight:600;
+    cursor:pointer;
+  }
+  .btn.outline{background:transparent;border:1px solid var(--border);color:var(--text);}
+
+  /* HERO */
+  .hero{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:70px 32px;max-width:1100px;margin:0 auto;gap:40px;flex-wrap:wrap;
+  }
+  .hero-text{max-width:560px;}
+  .hero-text .greet{color:var(--muted);font-size:18px;margin-bottom:6px;}
+  .hero-text h1{font-size:52px;font-weight:800;line-height:1.1;}
+  .hero-text h1 span{color:var(--blue-light);}
+  .subtitle{color:var(--blue-light);font-size:18px;margin:14px 0;}
+  .desc{color:var(--muted);font-size:15px;max-width:480px;}
+  .hero-actions{display:flex;gap:14px;margin:26px 0;}
+  .contact-row{display:flex;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:14px;margin-top:10px;}
+  .contact-row span{display:flex;align-items:center;gap:6px;}
+  .avatar{
+    width:280px;height:280px;border-radius:50%;
+    border:4px solid var(--blue);
+    flex-shrink:0;
+    overflow:hidden;
+  }
+  .avatar img{
+    width:100%;height:100%;object-fit:cover;
+    object-position:center 20%;
+  }
+
+  section{padding:50px 0;border-top:1px solid var(--border);}
+  .section-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;}
+  h2{display:flex;align-items:center;gap:10px;font-size:24px;margin-bottom:6px;}
+  h2::after{content:'';display:none;}
+  .underline{width:44px;height:3px;background:var(--blue);margin:8px 0 20px;border-radius:2px;}
+  p.body-text{color:var(--muted);font-size:15px;margin-bottom:20px;}
+
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .info-item{display:flex;gap:12px;align-items:flex-start;}
+  .info-icon{
+    width:38px;height:38px;border-radius:50%;background:var(--card);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--blue-light);
+    border:1px solid var(--border);
+  }
+  .info-item .label{color:var(--muted);font-size:13px;}
+  .info-item .value{font-size:14.5px;}
+
+  /* Education timeline */
+  .timeline{position:relative;padding-left:26px;}
+  .timeline::before{content:'';position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--border);}
+  .t-item{position:relative;margin-bottom:26px;}
+  .t-dot{position:absolute;left:-26px;top:4px;width:14px;height:14px;border-radius:50%;border:3px solid var(--blue);background:var(--bg);}
+  .t-item .title{color:var(--blue-light);font-weight:600;font-size:15.5px;}
+  .t-item .badge{
+    float:right;font-size:12px;padding:3px 10px;border-radius:12px;
+    background:rgba(47,127,250,0.15);color:var(--blue-light);
+  }
+  .t-item .badge.green{background:rgba(31,138,95,0.2);color:#3ecb8f;}
+  .t-item .school{font-size:14px;color:var(--text);margin-top:2px;}
+  .t-item .meta{font-size:13px;color:var(--muted);margin-top:2px;}
+
+  /* Skills */
+  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .skill-chip{
+    display:flex;align-items:center;gap:10px;
+    background:var(--card);border:1px solid var(--border);
+    padding:12px 14px;border-radius:8px;font-size:14px;
+  }
+  .skill-chip .ic{font-size:16px;}
+
+  /* Projects */
+  .project-card{
+    display:flex;gap:16px;background:var(--card);border:1px solid var(--border);
+    border-radius:10px;padding:18px;margin-bottom:16px;
+  }
+  .project-thumb{
+    width:52px;height:52px;border-radius:10px;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;
+  }
+  .project-info h3{font-size:16px;margin-bottom:6px;}
+  .project-info p{color:var(--muted);font-size:13.5px;margin-bottom:10px;}
+  .tags{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+  .tag{font-size:11px;padding:3px 9px;border-radius:5px;font-weight:600;}
+  .tag.html{background:rgba(227,79,38,.15);color:#e8703a;}
+  .tag.css{background:rgba(38,101,227,.15);color:#4a90ff;}
+  .tag.js{background:rgba(240,200,40,.15);color:#e8c93a;}
+  .view{margin-left:auto;color:var(--blue-light);font-size:13px;}
+
+  footer .foot-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:40px;}
+  .foot-list{list-style:none;color:var(--muted);font-size:14px;}
+  .foot-list li{margin-bottom:8px;padding-left:14px;position:relative;}
+  .foot-list li::before{content:'•';position:absolute;left:0;color:var(--blue-light);}
+  .platform-row{display:flex;gap:14px;margin-top:14px;flex-wrap:wrap;}
+  .plat{
+    width:56px;height:56px;border-radius:10px;background:var(--card);border:1px solid var(--border);
+    display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;
+  }
+  .plat-label{font-size:11px;color:var(--muted);text-align:center;margin-top:4px;}
+  .social-row{display:flex;gap:10px;margin-top:16px;}
+  .social{
+    width:38px;height:38px;border-radius:8px;background:var(--card);border:1px solid var(--border);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .copyright{text-align:center;padding:20px 0;color:var(--muted);font-size:13px;border-top:1px solid var(--border);}
+
+  @media(max-width:900px){
+    nav{display:none;}
+    .hero{flex-direction:column-reverse;text-align:center;}
+    .hero-text{max-width:100%;}
+    .hero-text h1{font-size:38px;}
+    .contact-row{justify-content:center;}
+    .section-grid{grid-template-columns:1fr;}
+    .info-grid{grid-template-columns:1fr;}
+    .skills-grid{grid-template-columns:repeat(2,1fr);}
+    .foot-grid{grid-template-columns:1fr;gap:28px;}
+    .avatar{width:200px;height:200px;font-size:60px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><span class="mark">AY</span> Akash Yadav</div>
+  <nav>
+    <a href="#home" class="active">Home</a>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#connect">Contact</a>
+  </nav>
+  <a href="Akash_Yadav_Resume.pdf" download class="btn" style="display:inline-flex;">⬇ Download Resume</a>
+</header>
+
+<div class="hero" id="home">
+  <div class="hero-text">
+    <div class="greet">Hello, I'm</div>
+    <h1>Akash <span>Yadav</span></h1>
+    <div class="subtitle">B.Tech IT Student | Web Developer | Problem Solver</div>
+    <p class="desc">I am an Information Technology student passionate about building web applications and solving real-world problems through clean and efficient code.</p>
+    <div class="hero-actions">
+      <a href="Akash_Yadav_Resume.pdf" download class="btn" style="display:inline-flex;">⬇ Download Resume</a>
+      <a href="#connect" class="btn outline" style="display:inline-flex;">✉ Contact Me</a>
+    </div>
+    <div class="contact-row">
+      <span>✉ akashyadavji730917@gmail.com</span>
+      <span>📞 +91 8005483667</span>
+      <span>📍 Deoria, Uttar Pradesh, India</span>
+    </div>
+  </div>
+  <div class="avatar"><img src="photo.png" alt="Akash Yadav"></div>
+</div>
+
+<section id="about">
+  <div class="container section-grid">
+    <div>
+      <h2>👤 About Me</h2>
+      <div class="underline"></div>
+      <p class="body-text">I am Akash Yadav, a B.Tech Information Technology student at RR Institute of Modern Technology. I am currently in my 6th semester with a CGPA of 7.5. I enjoy coding, learning new technologies, and building projects that solve real-life problems. I am always eager to improve my skills and grow as a developer.</p>
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="info-icon">👤</div>
+          <div><div class="label">Name</div><div class="value">Akash Yadav</div></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">🎂</div>
+          <div><div class="label">Date of Birth</div><div class="value">07 September 2006</div></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">✉</div>
+          <div><div class="label">Email</div><div class="value">akashyadavji730917@gmail.com</div></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">📞</div>
+          <div><div class="label">Phone</div><div class="value">+91 8005483667</div></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">📍</div>
+          <div><div class="label">Location</div><div class="value">Deoria, Uttar Pradesh, India</div></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon">🗣</div>
+          <div><div class="label">Languages</div><div class="value">Hindi, English</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="education">
+      <h2>🎓 Education</h2>
+      <div class="underline"></div>
+      <div class="timeline">
+        <div class="t-item">
+          <span class="badge">Pursuing</span>
+          <div class="title">B.Tech – Information Technology (IT)</div>
+          <div class="school">RR Institute of Modern Technology</div>
+          <div class="meta">6th Semester &nbsp;|&nbsp; CGPA: 7.5</div>
+          <div class="t-dot"></div>
+        </div>
+        <div class="t-item">
+          <span class="badge green">2023</span>
+          <div class="title">12th (Intermediate)</div>
+          <div class="school">Cambridge International English School</div>
+          <div class="meta">70%</div>
+          <div class="t-dot"></div>
+        </div>
+        <div class="t-item">
+          <span class="badge green">2021</span>
+          <div class="title">10th (High School)</div>
+          <div class="school">Central Public Academy, Chauri Chaura, Gorakhpur</div>
+          <div class="meta">54.8%</div>
+          <div class="t-dot"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container section-grid">
+    <div>
+      <h2>⚙ Technical Skills</h2>
+      <div class="underline"></div>
+      <div class="skills-grid">
+        <div class="skill-chip"><span class="ic">🟧</span>HTML5</div>
+        <div class="skill-chip"><span class="ic">🟦</span>CSS3</div>
+        <div class="skill-chip"><span class="ic">🟨</span>JavaScript</div>
+        <div class="skill-chip"><span class="ic">⚛</span>React.js</div>
+        <div class="skill-chip"><span class="ic">☕</span>Java</div>
+        <div class="skill-chip"><span class="ic">🐬</span>MySQL</div>
+        <div class="skill-chip"><span class="ic">🔵</span>C++</div>
+        <div class="skill-chip"><span class="ic">🔶</span>Git & GitHub</div>
+        <div class="skill-chip"><span class="ic">🟦</span>VS Code</div>
+        <div class="skill-chip"><span class="ic">📦</span>Data Structures</div>
+        <div class="skill-chip"><span class="ic">🟪</span>OOPs</div>
+        <div class="skill-chip"><span class="ic">💡</span>Problem Solving</div>
+      </div>
+    </div>
+
+    <div id="projects">
+      <h2>💼 Projects</h2>
+      <div class="underline"></div>
+      <div class="project-card">
+        <div class="project-thumb" style="background:#2f7ffa;">🛒</div>
+        <div class="project-info">
+          <h3>E-Commerce Website</h3>
+          <p>A responsive e-commerce website built using HTML, CSS and JavaScript with modern UI/UX design.</p>
+          <div class="tags">
+            <span class="tag html">HTML</span><span class="tag css">CSS</span><span class="tag js">JavaScript</span>
+            <span class="view">View Project →</span>
+          </div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-thumb" style="background:#1f8a5f;">&lt;/&gt;</div>
+        <div class="project-info">
+          <h3>Personal Portfolio Website</h3>
+          <p>A personal portfolio website to showcase my skills, projects and achievements.</p>
+          <div class="tags">
+            <span class="tag html">HTML</span><span class="tag css">CSS</span><span class="tag js">JavaScript</span>
+            <span class="view">View Project →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="connect">
+  <div class="container foot-grid" style="padding:50px 24px;">
+    <div>
+      <h2 style="font-size:18px;">🏅 Certifications</h2>
+      <div class="underline"></div>
+      <ul class="foot-list">
+        <li>Responsive Web Design – freeCodeCamp</li>
+        <li>Java Programming – HackerRank</li>
+        <li>Problem Solving (Basic) – HackerRank</li>
+      </ul>
+    </div>
+    <div>
+      <h2 style="font-size:18px;">🌐 Platforms</h2>
+      <div class="underline"></div>
+      <div class="platform-row">
+        <div><div class="plat">LC</div><div class="plat-label">LeetCode</div></div>
+        <div><div class="plat">GfG</div><div class="plat-label">GeeksforGeeks</div></div>
+        <div><div class="plat">H</div><div class="plat-label">HackerRank</div></div>
+        <div><div class="plat">CC</div><div class="plat-label">CodeChef</div></div>
+      </div>
+    </div>
+    <div>
+      <h2 style="font-size:18px;">📩 Let's Connect</h2>
+      <div class="underline"></div>
+      <p class="body-text" style="margin-bottom:0;">I'm always open to new opportunities and collaborations. Let's connect!</p>
+      <div class="social-row">
+        <div class="social">in</div>
+        <div class="social">gh</div>
+        <div class="social">✉</div>
+        <div class="social">𝕏</div>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">© 2025 Akash Yadav | All Rights Reserved</div>
+</footer>
+
+</body>
+</html>
