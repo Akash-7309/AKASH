@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Day 1 - Easy Examples</title>
+    <!-- Connect HTML to CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .img{
+            height: 150px;
+            width: 200px;
+            border-radius: 50px;
+
+        }
+        
+    </style>
+    
+</head>
+<body>
+
+    <!-- 1. HEADER -->
+    <div id="main-header">
+        <h1>CSS Basics (Day 1)</h1>
+        <p>Simple & Easy Code Examples</p>
+    </div>
+
+    <hr style="margin: 20px 0;">
+
+    <!-- 2. SELECTORS -->
+    <h2>1. Selectors & Colors</h2>
+    <p>This is a normal paragraph (Element Selector).</p>
+    <p class="highlight">This is highlighted text (Class Selector .highlight).</p>
+
+    <hr style="margin: 20px 0;">
+
+    <!-- 3. BOX MODEL -->
+    <h2>2. The Box Model</h2>
+    <p>Content &rarr; Padding (inside) &rarr; Border &rarr; Margin (outside)</p>
+    <div class="box">
+        I am a box with padding, border, and margin.
+    </div>
+
+    <hr style="margin: 20px 0;">
+
+    <!-- 4. BACKGROUNDS & BORDERS -->
+    <h2>3. Backgrounds & Borders</h2>
+    <div class="card">
+        <h3>Card Box</h3>
+        <p>Has rounded corners and a soft shadow.</p>
+    </div>
+    <div class="hero"></div>
+
+    <hr style="margin: 20px 0;">
+
+    <!-- 5. DISPLAY PROPERTY -->
+    <h2>4. Display: Inline-Block</h2>
+    <div class="box-inline">Box 1</div>
+    <div class="box-inline">Box 2</div>
+    <div class="box-inline">Box 3</div>
+
+    <hr style="margin: 20px 0;">
+
+    <!-- 6. FLEXBOX -->
+    <h2>5. Flexbox (Row of Items)</h2>
+    <div class="container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+    </div>
+
+    <hr style="margin: 20px 0;">
+
+    <!-- 7. POSITIONING -->
+    <h2>6. Positioning</h2>
+    <div class="position-box">
+        <span>Parent container (relative)</span>
+        <div class="relative-item">Relative item</div>
+        <div class="absolute-item">Absolute item (top right)</div>
+    </div>
+
+    <hr style="margin: 20px 0;">
+
+    <!-- 8. MINI PROJECT: PROFILE CARD -->
+    <h2>7. Mini Project: Profile Card</h2>
+    <div class="profile-card-wrapper">
+        <div class="profile-card">"
+            <img class="img" src="ra.jpg"  >
+            <h2>Akash yadav</h2>
+            <p>Frontend Developer</p>
+            <button class="btn">Follow</button>
+        </div>
+    </div>
+
+</body>
+</html>

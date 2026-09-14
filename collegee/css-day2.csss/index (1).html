@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Day 2 — Live Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="stylehhh.css" />
+</head>
+<body>
+
+   
+  <nav class="navbar">
+    <div class="logo">CSS Day 2</div>
+    <ul class="nav-links">
+      <li><a href="#units">Units</a></li>
+      <li><a href="#pseudo">Pseudo</a></li>
+      <li><a href="#grid">Grid</a></li>
+      <li><a href="#transitions">Transitions</a></li>
+      <li><a href="#transforms">Transforms</a></li>
+      <li><a href="#animations">Animations</a></li>
+      <li><a href="#mediaq">Media Q</a></li>
+      <li><a href="#variables">Variables</a></li>
+      <li><a href="#miniproject">Mini Project</a></li>
+    </ul>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <span class="hero-badge">Live Demo</span>
+    <h1>CSS Basics — Day 2</h1>
+    <p>All topics running live. Hover, resize, and inspect everything.</p>
+  </section>
+
+  <main>
+
+    <!-- SECTION 10 — UNITS -->
+    <section class="topic-section" id="units">
+      <div class="topic-header">
+        <span class="topic-num">10</span>
+        <h2>Units in CSS</h2>
+      </div>
+      <p class="topic-desc">Different units behave differently. Resize the browser to see how they scale.</p>
+
+      <div class="units-demo">
+        <div class="unit-box px-box">
+          <span class="unit-label">px</span>
+          <p>width: 160px</p>
+          <small>Fixed — never changes</small>
+        </div>
+        <div class="unit-box percent-box">
+          <span class="unit-label">%</span>
+          <p>width: 35%</p>
+          <small>Relative to parent</small>
+        </div>
+        <div class="unit-box rem-box">
+          <span class="unit-label">rem</span>
+          <p>padding: 2rem</p>
+          <small>Relative to root (16px)</small>
+        </div>
+        <div class="unit-box vw-box">
+          <span class="unit-label">vw</span>
+          <p>width: 20vw</p>
+          <small>Relative to viewport</small>
+        </div>
+      </div>
+
+      <div class="vh-demo">
+        <span>This box is <strong>35vh</strong> tall — 35% of your browser height</span>
+      </div>
+    </section>
+
+    <!-- SECTION 11 — PSEUDO-CLASSES & PSEUDO-ELEMENTS -->
+    <section class="topic-section" id="pseudo">
+      <div class="topic-header">
+        <span class="topic-num">11</span>
+        <h2>Pseudo-classes &amp; Pseudo-elements</h2>
+      </div>
+      <p class="topic-desc">Hover items, click the input, and watch pseudo-classes activate.</p>
+
+      <div class="pseudo-grid">
+        <div class="pseudo-card">
+          <h3>Pseudo-classes <code>:</code></h3>
+          <ul class="styled-list">
+            <li>:first-child — I am bold</li>
+            <li>:nth-child(2) — I have a highlight</li>
+            <li>Hover me — :hover activates</li>
+            <li>:last-child — I am gray</li>
+          </ul>
+          <input class="demo-input" type="text" placeholder="Click me — :focus activates" />
+          <a class="demo-link" href="#">Hover me — :hover changes my color</a>
+        </div>
+
+        <div class="pseudo-card">
+          <h3>Pseudo-elements <code>::</code></h3>
+          <p class="dropcap-para">This paragraph uses ::first-letter to make the first letter huge and colored. The rest of the text is normal.</p>
+          <p class="before-after-para">Arrow before and checkmark after — via CSS only.</p>
+          <p class="before-after-para">No extra HTML tags needed for these decorations.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 12 — CSS GRID -->
+    <section class="topic-section" id="grid">
+      <div class="topic-header">
+        <span class="topic-num">12</span>
+        <h2>CSS Grid Basics</h2>
+      </div>
+      <p class="topic-desc"><code>grid-template-columns: repeat(3, 1fr)</code> — 3 equal columns.</p>
+
+      <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+      </div>
+
+      <p class="topic-desc" style="margin-top:24px"><code>auto-fit + minmax</code> — columns adjust automatically:</p>
+      <div class="grid-autofit">
+        <div class="grid-item g2">A</div>
+        <div class="grid-item g2">B</div>
+        <div class="grid-item g2">C</div>
+        <div class="grid-item g2">D</div>
+        <div class="grid-item g2">E</div>
+      </div>
+    </section>
+
+    <!-- SECTION 13 — TRANSITIONS -->
+    <section class="topic-section" id="transitions">
+      <div class="topic-header">
+        <span class="topic-num">13</span>
+        <h2>Transitions</h2>
+      </div>
+      <p class="topic-desc">Hover each button — the change is smooth instead of instant.</p>
+
+      <div class="transition-demos">
+        <button class="btn btn-color">Hover — Color</button>
+        <button class="btn btn-scale">Hover — Scale</button>
+        <button class="btn btn-all">Hover — All</button>
+        <button class="btn btn-slow">Hover — Slow (1s)</button>
+      </div>
+    </section>
+
+    <!-- SECTION 14 — TRANSFORMS -->
+    <section class="topic-section" id="transforms">
+      <div class="topic-header">
+        <span class="topic-num">14</span>
+        <h2>Transforms</h2>
+      </div>
+      <p class="topic-desc">Hover each box — notice surrounding boxes do NOT move.</p>
+
+      <div class="transform-demos">
+        <div class="transform-box t-translate">
+          <span>translate</span>
+          <small>20px, 10px</small>
+        </div>
+        <div class="transform-box t-scale">
+          <span>scale</span>
+          <small>1.3x</small>
+        </div>
+        <div class="transform-box t-rotate">
+          <span>rotate</span>
+          <small>15deg</small>
+        </div>
+        <div class="transform-box t-multi">
+          <span>multi</span>
+          <small>translate + rotate + scale</small>
+        </div>
+      </div>
+    </section>
+ 
+    <!-- SECTION 15 — ANIMATIONS -->
+    <section class="topic-section" id="animations">
+      <div class="topic-header">
+        <span class="topic-num">15</span>
+        <h2>Animations (@keyframes)</h2>
+      </div>
+      <p class="topic-desc">These run automatically on page load — no hover or click needed.</p>
+
+      <div class="animation-stage">
+        <div class="anim-ball bounce-ball"></div>
+        <div class="anim-box spin-box"></div>
+        <div class="anim-bar pulse-bar"></div>
+        <div class="anim-dot blink-dot"></div>
+      </div>
+      <div class="anim-labels">
+        <span>bounce</span>
+        <span>spin</span>
+        <span>pulse</span>
+        <span>blink</span>
+      </div>
+    </section>
+
+    <!-- SECTION 16 — MEDIA QUERIES -->
+    <section class="topic-section" id="mediaq">
+      <div class="topic-header">
+        <span class="topic-num">16</span>
+        <h2>Media Queries &amp; Responsive Design</h2>
+      </div>
+      <p class="topic-desc">Resize the browser below <strong>768px</strong> — the layout stacks.</p>
+
+      <div class="mq-demo-container">
+        <div class="mq-box mq-main">Main Content</div>
+        <div class="mq-box mq-side">Sidebar</div>
+      </div>
+
+      <div class="mq-indicator">
+        <span class="mq-desktop">Desktop layout — side by side</span>
+        <span class="mq-mobile">Mobile layout — stacked</span>
+      </div>
+    </section>
+
+    <!-- SECTION 17 — CSS VARIABLES -->
+    <section class="topic-section" id="variables">
+      <div class="topic-header">
+        <span class="topic-num">17</span>
+        <h2>CSS Variables (Custom Properties)</h2>
+      </div>
+      <p class="topic-desc">All cards below use <code>--theme-color</code>. Change that one variable and everything updates.</p>
+
+      <div class="var-cards">
+        <div class="var-card">
+          <div class="var-card-header">Card 1</div>
+          <p>Border, header, and button all use <code>var(--theme-color)</code></p>
+          <button class="var-btn">Button</button>
+        </div>
+        <div class="var-card">
+          <div class="var-card-header">Card 2</div>
+          <p>Same variable, same color everywhere — change it once at :root.</p>
+          <button class="var-btn">Button</button>
+        </div>
+        <div class="var-card">
+          <div class="var-card-header">Card 3</div>
+          <p>This is the power of CSS variables for theming.</p>
+          <button class="var-btn">Button</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 18 — MINI PROJECT: RESPONSIVE NAVBAR -->
+    <section class="topic-section" id="miniproject">
+      <div class="topic-header">
+        <span class="topic-num">18</span>
+        <h2>Mini Project — Responsive Navbar</h2>
+      </div>
+      <p class="topic-desc">The sticky navbar at the top of this page IS the mini project. It combines <strong>Flexbox</strong>, <strong>CSS Variables</strong>, <strong>:hover transitions</strong>, and a <strong>media query</strong> — all from Day 2.</p>
+
+      <!-- What it uses breakdown -->
+      <div class="project-breakdown">
+        <div class="breakdown-item">
+          <span class="breakdown-icon">🎨</span>
+          <div>
+            <strong>CSS Variables</strong>
+            <p>Logo color and link hover color both use <code>var(--theme-color)</code> — change one value, both update.</p>
+          </div>
+        </div>
+        <div class="breakdown-item">
+          <span class="breakdown-icon">📐</span>
+          <div>
+            <strong>Flexbox</strong>
+            <p><code>display: flex</code> + <code>justify-content: space-between</code> puts logo on left, links on right.</p>
+          </div>
+        </div>
+        <div class="breakdown-item">
+          <span class="breakdown-icon">✨</span>
+          <div>
+            <strong>Transition on :hover</strong>
+            <p>Links use <code>transition: color 0.2s ease</code> so the color change is smooth, not instant.</p>
+          </div>
+        </div>
+        <div class="breakdown-item">
+          <span class="breakdown-icon">📱</span>
+          <div>
+            <strong>Media Query</strong>
+            <p>Below <strong>768px</strong> the navbar stacks vertically — resize this window to see it.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live mini navbar replica inside section -->
+      <p class="topic-desc" style="margin-top:28px">A standalone copy you can inspect:</p>
+      <div class="mini-navbar-demo">
+        <nav class="mini-navbar">
+          <div class="mini-logo">MySite</div>
+          <ul class="mini-nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <p class="mini-note">Hover the links · Resize below 600px to stack</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    CSS Day 2 — Live Demo &nbsp;|&nbsp; Units · Pseudo · Grid · Transitions · Transforms · Animations · Media Queries · Variables · Mini Project
+  </footer>
+
+</body>
+</html>
